@@ -297,8 +297,8 @@ class CloudMap:
             self.name = js["name"]
         else:
             self.name = None
-        
-        if "zones" in js:
+
+        if "zones" in js and js["zones"] is not None:
             self.zones = list(map(lambda x: CloudZone(self, x), js["zones"]))
         else:
             self.zones = []
